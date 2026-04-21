@@ -1,0 +1,847 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Luxury Perfumes - Premium Fragrances</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+        }
+
+        .header {
+            background: linear-gradient(45deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 2rem 0;
+            text-align: center;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+
+        .header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .header p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .perfumes-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            padding: 3rem 0;
+        }
+
+        .perfume-card {
+            background: white;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .perfume-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+        }
+
+        .perfume-image {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+
+        .perfume-card:hover .perfume-image {
+            transform: scale(1.05);
+        }
+
+        .perfume-info {
+            padding: 1.5rem;
+        }
+
+        .perfume-name {
+            font-size: 1.4rem;
+            font-weight: bold;
+            color: #2c3e50;
+            margin-bottom: 0.5rem;
+        }
+
+        .perfume-description {
+            color: #7f8c8d;
+            margin-bottom: 1rem;
+            font-size: 0.95rem;
+        }
+
+        .price {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: #e74c3c;
+            margin-bottom: 1rem;
+        }
+
+        .buy-btn {
+            width: 100%;
+            padding: 1rem;
+            background: linear-gradient(45deg, #ff6b6b, #ee5a24);
+            color: white;
+            border: none;
+            border-radius: 10px;
+            font-size: 1.1rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .buy-btn:hover {
+            background: linear-gradient(45deg, #ee5a24, #ff6b6b);
+            transform: scale(1.05);
+            box-shadow: 0 5px 15px rgba(238, 90, 36, 0.4);
+        }
+
+        .buy-btn:active {
+            transform: scale(0.98);
+        }
+
+        .features {
+            background: rgba(255,255,255,0.9);
+            padding: 2rem;
+            margin: 3rem 0;
+            border-radius: 15px;
+            text-align: center;
+        }
+
+        .features h2 {
+            color: #2c3e50;
+            margin-bottom: 1rem;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            margin-top: 1.5rem;
+        }
+
+        .feature {
+            text-align: center;
+        }
+
+        .feature i {
+            font-size: 2.5rem;
+            color: #667eea;
+            margin-bottom: 0.5rem;
+        }
+
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 2rem;
+            }
+            
+            .perfumes-grid {
+                grid-template-columns: 1fr;
+                padding: 2rem 0;
+            }
+        }
+
+        .footer {
+            background: #2c3e50;
+            color: white;
+            text-align: center;
+            padding: 2rem;
+            margin-top: 3rem;
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <h1>✨ Luxury Perfumes</h1>
+            <p>Discover premium fragrances for every occasion</p>
+        </div>
+    </header>
+
+    <main class="container">
+        <div class="perfumes-grid">
+            <!-- Perfume 1 -->
+            <div class="perfume-card">
+                <img src="https://images.unsplash.com/photo-1611606066920-63bf9c9f8e01?w=400&h=250&fit=crop" alt="Eau de Parfum Gold" class="perfume-image">
+                <div class="perfume-info">
+                    <h3 class="perfume-name">Eau de Parfum Gold</h3>
+                    <p class="perfume-description">A luxurious blend of oriental spices, vanilla, and amber. Perfect for evening wear.</p>
+                    <div class="price">$89.99</div>
+                    <button class="buy-btn" onclick="buyNow('Eau de Parfum Gold', 89.99)">🛒 Buy Now</button>
+                </div>
+            </div>
+
+            <!-- Perfume 2 -->
+            <div class="perfume-card">
+                <img src="https://images.unsplash.com/photo-1590736969950-785e3d548e9f?w=400&h=250&fit=crop" alt="Citrus Breeze" class="perfume-image">
+                <div class="perfume-info">
+                    <h3 class="perfume-name">Citrus Breeze</h3>
+                    <p class="perfume-description">Fresh citrus notes with hints of bergamot and marine accords. Ideal for daytime.</p>
+                    <div class="price">$69.99</div>
+                    <button class="buy-btn" onclick="buyNow('Citrus Breeze', 69.99)">🛒 Buy Now</button>
+                </div>
+            </div>
+
+            <!-- Perfume 3 -->
+            <div class="perfume-card">
+                <img src="https://images.unsplash.com/photo-1574169208507-84376144848b?w=400&h=250&fit=crop" alt="Floral Dream" class="perfume-image">
+                <div class="perfume-info">
+                    <h3 class="perfume-name">Floral Dream</h3>
+                    <p class="perfume-description">Delicate rose, jasmine, and peony bouquet with soft musky base. Timeless elegance.</p>
+                    <div class="price">$79.99</div>
+                    <button class="buy-btn" onclick="buyNow('Floral Dream', 79.99)">🛒 Buy Now</button>
+                </div>
+            </div>
+
+            <!-- Perfume 4 -->
+            <div class="perfume-card">
+                <img src="https://images.unsplash.com/photo-1587014611671-5cf7cd071cde?w=400&h=250&fit=crop" alt="Woody Essence" class="perfume-image">
+                <div class="perfume-info">
+                    <h3 class="perfume-name">Woody Essence</h3>
+                    <p class="perfume-description">Rich sandalwood, cedarwood, and vetiver. Sophisticated and masculine.</p>
+                    <div class="price">$94.99</div>
+                    <button class="buy-btn" onclick="buyNow('Woody Essence', 94.99)">🛒 Buy Now</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="features">
+            <h2>Why Choose Our Perfumes?</h2>
+            <div class="features-grid">
+                <div class="feature">
+                    <div>🌟</div>
+                    <h4>Premium Quality</h4>
+                    <p>Handcrafted with finest ingredients</p>
+                </div>
+                <div class="feature">
+                    <div>🚚</div>
+                    <h4>Free Shipping</h4>
+                    <p>Orders over $50 ship free</p>
+                </div>
+                <div class="feature">
+                    <div>💎</div>
+                    <h4>30-Day Guarantee</h4>
+                    <p>Love it or return it</p>
+                </div>
+                <div class="feature">
+                    <div>🎁</div>
+                    <h4>Gift Ready</h4>
+                    <p>Beautifully packaged</p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <p>&copy; 2024 Luxury Perfumes. All rights reserved. | Made with ❤️ for fragrance lovers</p>
+    </footer>
+
+    <script>
+        function buyNow(name, price) {
+            // Simulate adding to cart
+            const message = `✅ Added "${name}" ($${price}) to cart!`;
+            alert(message);
+            
+            // You can replace this with actual cart functionality
+            console.log(`Purchased: ${name} for $${price}`);
+        }
+
+        // Add smooth scroll for better UX
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
+</html><!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Luxury Perfumes - Premium Fragrances</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+        }
+
+        .header {
+            background: linear-gradient(45deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 2rem 0;
+            text-align: center;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+
+        .header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .header p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .perfumes-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            padding: 3rem 0;
+        }
+
+        .perfume-card {
+            background: white;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .perfume-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+        }
+
+        .perfume-image {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+
+        .perfume-card:hover .perfume-image {
+            transform: scale(1.05);
+        }
+
+        .perfume-info {
+            padding: 1.5rem;
+        }
+
+        .perfume-name {
+            font-size: 1.4rem;
+            font-weight: bold;
+            color: #2c3e50;
+            margin-bottom: 0.5rem;
+        }
+
+        .perfume-description {
+            color: #7f8c8d;
+            margin-bottom: 1rem;
+            font-size: 0.95rem;
+        }
+
+        .price {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: #e74c3c;
+            margin-bottom: 1rem;
+        }
+
+        .buy-btn {
+            width: 100%;
+            padding: 1rem;
+            background: linear-gradient(45deg, #ff6b6b, #ee5a24);
+            color: white;
+            border: none;
+            border-radius: 10px;
+            font-size: 1.1rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .buy-btn:hover {
+            background: linear-gradient(45deg, #ee5a24, #ff6b6b);
+            transform: scale(1.05);
+            box-shadow: 0 5px 15px rgba(238, 90, 36, 0.4);
+        }
+
+        .buy-btn:active {
+            transform: scale(0.98);
+        }
+
+        .features {
+            background: rgba(255,255,255,0.9);
+            padding: 2rem;
+            margin: 3rem 0;
+            border-radius: 15px;
+            text-align: center;
+        }
+
+        .features h2 {
+            color: #2c3e50;
+            margin-bottom: 1rem;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            margin-top: 1.5rem;
+        }
+
+        .feature {
+            text-align: center;
+        }
+
+        .feature i {
+            font-size: 2.5rem;
+            color: #667eea;
+            margin-bottom: 0.5rem;
+        }
+
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 2rem;
+            }
+            
+            .perfumes-grid {
+                grid-template-columns: 1fr;
+                padding: 2rem 0;
+            }
+        }
+
+        .footer {
+            background: #2c3e50;
+            color: white;
+            text-align: center;
+            padding: 2rem;
+            margin-top: 3rem;
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <h1>✨ Luxury Perfumes</h1>
+            <p>Discover premium fragrances for every occasion</p>
+        </div>
+    </header>
+
+    <main class="container">
+        <div class="perfumes-grid">
+            <!-- Perfume 1 -->
+            <div class="perfume-card">
+                <img src="https://images.unsplash.com/photo-1611606066920-63bf9c9f8e01?w=400&h=250&fit=crop" alt="Eau de Parfum Gold" class="perfume-image">
+                <div class="perfume-info">
+                    <h3 class="perfume-name">Eau de Parfum Gold</h3>
+                    <p class="perfume-description">A luxurious blend of oriental spices, vanilla, and amber. Perfect for evening wear.</p>
+                    <div class="price">$89.99</div>
+                    <button class="buy-btn" onclick="buyNow('Eau de Parfum Gold', 89.99)">🛒 Buy Now</button>
+                </div>
+            </div>
+
+            <!-- Perfume 2 -->
+            <div class="perfume-card">
+                <img src="https://images.unsplash.com/photo-1590736969950-785e3d548e9f?w=400&h=250&fit=crop" alt="Citrus Breeze" class="perfume-image">
+                <div class="perfume-info">
+                    <h3 class="perfume-name">Citrus Breeze</h3>
+                    <p class="perfume-description">Fresh citrus notes with hints of bergamot and marine accords. Ideal for daytime.</p>
+                    <div class="price">$69.99</div>
+                    <button class="buy-btn" onclick="buyNow('Citrus Breeze', 69.99)">🛒 Buy Now</button>
+                </div>
+            </div>
+
+            <!-- Perfume 3 -->
+            <div class="perfume-card">
+                <img src="https://images.unsplash.com/photo-1574169208507-84376144848b?w=400&h=250&fit=crop" alt="Floral Dream" class="perfume-image">
+                <div class="perfume-info">
+                    <h3 class="perfume-name">Floral Dream</h3>
+                    <p class="perfume-description">Delicate rose, jasmine, and peony bouquet with soft musky base. Timeless elegance.</p>
+                    <div class="price">$79.99</div>
+                    <button class="buy-btn" onclick="buyNow('Floral Dream', 79.99)">🛒 Buy Now</button>
+                </div>
+            </div>
+
+            <!-- Perfume 4 -->
+            <div class="perfume-card">
+                <img src="https://images.unsplash.com/photo-1587014611671-5cf7cd071cde?w=400&h=250&fit=crop" alt="Woody Essence" class="perfume-image">
+                <div class="perfume-info">
+                    <h3 class="perfume-name">Woody Essence</h3>
+                    <p class="perfume-description">Rich sandalwood, cedarwood, and vetiver. Sophisticated and masculine.</p>
+                    <div class="price">$94.99</div>
+                    <button class="buy-btn" onclick="buyNow('Woody Essence', 94.99)">🛒 Buy Now</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="features">
+            <h2>Why Choose Our Perfumes?</h2>
+            <div class="features-grid">
+                <div class="feature">
+                    <div>🌟</div>
+                    <h4>Premium Quality</h4>
+                    <p>Handcrafted with finest ingredients</p>
+                </div>
+                <div class="feature">
+                    <div>🚚</div>
+                    <h4>Free Shipping</h4>
+                    <p>Orders over $50 ship free</p>
+                </div>
+                <div class="feature">
+                    <div>💎</div>
+                    <h4>30-Day Guarantee</h4>
+                    <p>Love it or return it</p>
+                </div>
+                <div class="feature">
+                    <div>🎁</div>
+                    <h4>Gift Ready</h4>
+                    <p>Beautifully packaged</p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <p>&copy; 2024 Luxury Perfumes. All rights reserved. | Made with ❤️ for fragrance lovers</p>
+    </footer>
+
+    <script>
+        function buyNow(name, price) {
+            // Simulate adding to cart
+            const message = `✅ Added "${name}" ($${price}) to cart!`;
+            alert(message);
+            
+            // You can replace this with actual cart functionality
+            console.log(`Purchased: ${name} for $${price}`);
+        }
+
+        // Add smooth scroll for better UX
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
+</html><!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Luxury Perfumes - Premium Fragrances</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+        }
+
+        .header {
+            background: linear-gradient(45deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 2rem 0;
+            text-align: center;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+
+        .header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .header p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .perfumes-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            padding: 3rem 0;
+        }
+
+        .perfume-card {
+            background: white;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .perfume-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+        }
+
+        .perfume-image {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+
+        .perfume-card:hover .perfume-image {
+            transform: scale(1.05);
+        }
+
+        .perfume-info {
+            padding: 1.5rem;
+        }
+
+        .perfume-name {
+            font-size: 1.4rem;
+            font-weight: bold;
+            color: #2c3e50;
+            margin-bottom: 0.5rem;
+        }
+
+        .perfume-description {
+            color: #7f8c8d;
+            margin-bottom: 1rem;
+            font-size: 0.95rem;
+        }
+
+        .price {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: #e74c3c;
+            margin-bottom: 1rem;
+        }
+
+        .buy-btn {
+            width: 100%;
+            padding: 1rem;
+            background: linear-gradient(45deg, #ff6b6b, #ee5a24);
+            color: white;
+            border: none;
+            border-radius: 10px;
+            font-size: 1.1rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .buy-btn:hover {
+            background: linear-gradient(45deg, #ee5a24, #ff6b6b);
+            transform: scale(1.05);
+            box-shadow: 0 5px 15px rgba(238, 90, 36, 0.4);
+        }
+
+        .buy-btn:active {
+            transform: scale(0.98);
+        }
+
+        .features {
+            background: rgba(255,255,255,0.9);
+            padding: 2rem;
+            margin: 3rem 0;
+            border-radius: 15px;
+            text-align: center;
+        }
+
+        .features h2 {
+            color: #2c3e50;
+            margin-bottom: 1rem;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            margin-top: 1.5rem;
+        }
+
+        .feature {
+            text-align: center;
+        }
+
+        .feature i {
+            font-size: 2.5rem;
+            color: #667eea;
+            margin-bottom: 0.5rem;
+        }
+
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 2rem;
+            }
+            
+            .perfumes-grid {
+                grid-template-columns: 1fr;
+                padding: 2rem 0;
+            }
+        }
+
+        .footer {
+            background: #2c3e50;
+            color: white;
+            text-align: center;
+            padding: 2rem;
+            margin-top: 3rem;
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <h1>✨ Luxury Perfumes</h1>
+            <p>Discover premium fragrances for every occasion</p>
+        </div>
+    </header>
+
+    <main class="container">
+        <div class="perfumes-grid">
+            <!-- Perfume 1 -->
+            <div class="perfume-card">
+                <img src="https://images.unsplash.com/photo-1611606066920-63bf9c9f8e01?w=400&h=250&fit=crop" alt="Eau de Parfum Gold" class="perfume-image">
+                <div class="perfume-info">
+                    <h3 class="perfume-name">Eau de Parfum Gold</h3>
+                    <p class="perfume-description">A luxurious blend of oriental spices, vanilla, and amber. Perfect for evening wear.</p>
+                    <div class="price">$89.99</div>
+                    <button class="buy-btn" onclick="buyNow('Eau de Parfum Gold', 89.99)">🛒 Buy Now</button>
+                </div>
+            </div>
+
+            <!-- Perfume 2 -->
+            <div class="perfume-card">
+                <img src="https://images.unsplash.com/photo-1590736969950-785e3d548e9f?w=400&h=250&fit=crop" alt="Citrus Breeze" class="perfume-image">
+                <div class="perfume-info">
+                    <h3 class="perfume-name">Citrus Breeze</h3>
+                    <p class="perfume-description">Fresh citrus notes with hints of bergamot and marine accords. Ideal for daytime.</p>
+                    <div class="price">$69.99</div>
+                    <button class="buy-btn" onclick="buyNow('Citrus Breeze', 69.99)">🛒 Buy Now</button>
+                </div>
+            </div>
+
+            <!-- Perfume 3 -->
+            <div class="perfume-card">
+                <img src="https://images.unsplash.com/photo-1574169208507-84376144848b?w=400&h=250&fit=crop" alt="Floral Dream" class="perfume-image">
+                <div class="perfume-info">
+                    <h3 class="perfume-name">Floral Dream</h3>
+                    <p class="perfume-description">Delicate rose, jasmine, and peony bouquet with soft musky base. Timeless elegance.</p>
+                    <div class="price">$79.99</div>
+                    <button class="buy-btn" onclick="buyNow('Floral Dream', 79.99)">🛒 Buy Now</button>
+                </div>
+            </div>
+
+            <!-- Perfume 4 -->
+            <div class="perfume-card">
+                <img src="https://images.unsplash.com/photo-1587014611671-5cf7cd071cde?w=400&h=250&fit=crop" alt="Woody Essence" class="perfume-image">
+                <div class="perfume-info">
+                    <h3 class="perfume-name">Woody Essence</h3>
+                    <p class="perfume-description">Rich sandalwood, cedarwood, and vetiver. Sophisticated and masculine.</p>
+                    <div class="price">$94.99</div>
+                    <button class="buy-btn" onclick="buyNow('Woody Essence', 94.99)">🛒 Buy Now</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="features">
+            <h2>Why Choose Our Perfumes?</h2>
+            <div class="features-grid">
+                <div class="feature">
+                    <div>🌟</div>
+                    <h4>Premium Quality</h4>
+                    <p>Handcrafted with finest ingredients</p>
+                </div>
+                <div class="feature">
+                    <div>🚚</div>
+                    <h4>Free Shipping</h4>
+                    <p>Orders over $50 ship free</p>
+                </div>
+                <div class="feature">
+                    <div>💎</div>
+                    <h4>30-Day Guarantee</h4>
+                    <p>Love it or return it</p>
+                </div>
+                <div class="feature">
+                    <div>🎁</div>
+                    <h4>Gift Ready</h4>
+                    <p>Beautifully packaged</p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <p>&copy; 2024 Luxury Perfumes. All rights reserved. | Made with ❤️ for fragrance lovers</p>
+    </footer>
+
+    <script>
+        function buyNow(name, price) {
+            // Simulate adding to cart
+            const message = `✅ Added "${name}" ($${price}) to cart!`;
+            alert(message);
+            
+            // You can replace this with actual cart functionality
+            console.log(`Purchased: ${name} for $${price}`);
+        }
+
+        // Add smooth scroll for better UX
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
+</html>
